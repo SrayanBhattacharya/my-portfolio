@@ -24,36 +24,47 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a] border-b border-red-600">
       {/* Main Row */}
-      <div className="px-6 py-4 flex items-center justify-between">
+      <div className="relative px-6 py-4 flex items-center justify-between">
         {/* Left */}
-        <span className="text-white font-mono text-sm tracking-widest uppercase">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="inline-block text-white font-mono text-sm tracking-widest uppercase hover:text-red-500 transition-all duration-200 active:scale-95"
+        >
           &gt; SRAYAN
-        </span>
+        </button>
 
         {/* Center */}
-        <span className="hidden md:block text-[#555555] font-mono text-sm tracking-widest">
-          Kolkata — {time}
-        </span>
+        <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center pointer-events-none">
+          <span className="text-[#555555] font-mono text-sm tracking-widest">
+            Kolkata — {time}
+          </span>
+        </div>
 
         {/* Right - Desktop */}
         <div className="hidden md:flex gap-6">
           <a
             href="#work"
-            className="text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-colors"
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-90"
           >
             WORK
           </a>
           <a
             href="#about"
-            className="text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-colors"
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-90"
           >
             ABOUT
+          </a>
+          <a
+            href="#contact"
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-90"
+          >
+            CONTACT ME
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-red-500 font-mono text-lg"
+          className="md:hidden text-red-500 font-mono text-lg transition-transform duration-200 active:scale-90"
           onClick={() => setMenuOpen((prev) => !prev)}
         >
           {menuOpen ? "[x]" : "[=]"}
@@ -72,7 +83,7 @@ const Navbar: React.FC = () => {
           <a
             href="#work"
             onClick={() => setMenuOpen(false)}
-            className="text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-colors"
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-95 origin-left"
           >
             &gt; WORK
           </a>
@@ -80,9 +91,17 @@ const Navbar: React.FC = () => {
           <a
             href="#about"
             onClick={() => setMenuOpen(false)}
-            className="text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-colors"
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-95 origin-left"
           >
             &gt; ABOUT
+          </a>
+
+          <a
+            href="#contact"
+            onClick={() => setMenuOpen(false)}
+            className="inline-block text-[#555555] font-mono text-sm tracking-widest hover:text-red-500 transition-all duration-200 active:scale-95 origin-left"
+          >
+            &gt; CONTACT ME
           </a>
         </div>
       )}
