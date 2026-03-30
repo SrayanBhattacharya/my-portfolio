@@ -3,7 +3,7 @@
 A terminal-styled developer portfolio built with React, TypeScript, and Vite.
 Designed with a dark aesthetic, red accents, and monospace typography.
 
-Inspired by [andyreff.com](https://andyreff.com)
+Inspired by [andrewreff.com](https://andrewreff.com/)
 
 ---
 
