@@ -29,7 +29,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/SrayanBhattacharya/codeduel",
     live: "https://codeduel-three.vercel.app/",
-    image: "/projects/project1.webp",
+    image: "/images/project1.webp",
   },
   {
     id: "02",
@@ -45,7 +45,7 @@ const projects: Project[] = [
       "Chart.js",
     ],
     github: "https://github.com/SrayanBhattacharya/air-quality-monitor",
-    image: "/projects/project2.webp",
+    image: "/images/project2.webp",
   },
 ];
 
