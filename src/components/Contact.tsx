@@ -17,13 +17,6 @@ const Contact = () => {
     "idle" | "sending" | "success" | "error"
   >("idle");
 
-  const encode = (data: Record<string, string>) =>
-    Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]),
-      )
-      .join("&");
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
@@ -34,13 +27,23 @@ const Contact = () => {
     e.preventDefault();
     setStatus("sending");
     try {
-      await fetch("/", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...form }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: "New message from portfolio",
+          from_name: form.name,
+          ...form,
+        }),
       });
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      const data = await response.json();
+      if (data.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
