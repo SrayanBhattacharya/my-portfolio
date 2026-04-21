@@ -13,15 +13,6 @@ const Footer = () => {
           <p className="font-mono text-[#333333] text-xs tracking-widest">
             &gt; no bugs were harmed in the making of this portfolio.
           </p>
-
-          <a
-            href="https://andrewreff.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-mono text-[#333333] text-xs tracking-widest hover:text-red-500 transition-colors duration-200"
-          >
-            &gt; inspired by andrewreff.com
-          </a>
         </div>
 
         {/* Right — Back to top */}

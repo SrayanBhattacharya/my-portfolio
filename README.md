@@ -3,8 +3,6 @@
 A terminal-styled developer portfolio built with React, TypeScript, and Vite.
 Designed with a dark aesthetic, red accents, and monospace typography.
 
-Inspired by [andrewreff.com](https://andrewreff.com/)
-
 ---
 
 ## 🛠️ Tech Stack
@@ -55,7 +53,11 @@ pnpm build
 
 ## 📬 Contact Form
 
-This portfolio uses Netlify Forms for the contact form.
-It works automatically on Netlify deployment — no backend needed.
+This portfolio uses [Web3Forms](https://web3forms.com) for the contact form.
+Submissions are delivered directly to email — no backend needed.
+
+To self-host or fork this project, create a free account at web3forms.com,
+get your access key, and add it as `VITE_WEB3FORMS_KEY` in your `.env` file
+and in your Netlify environment variables.
 
 ---
