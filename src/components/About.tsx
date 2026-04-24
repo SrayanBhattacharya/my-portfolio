@@ -36,9 +36,17 @@ const About: React.FC = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        &gt; I build robust backends and explore the edges of AI/ML.
+        &gt; <strong>Backend Developer</strong> |{" "}
+        <strong>AI/ML Enthusiast</strong> — <strong>West Bengal, India</strong>.
         <br />
-        &gt; I care about clean systems, fast APIs, and solving real problems.
+        &gt; I build <strong>scalable backend systems</strong> and{" "}
+        <strong>high-performance APIs</strong>.
+        <br />
+        &gt; I explore <strong>AI/ML</strong> and apply it to{" "}
+        <strong>real-world problems</strong>.
+        <br />
+        &gt; I focus on <strong>clean architecture</strong>,{" "}
+        <strong>efficiency</strong>, and <strong>scalability</strong>.
       </motion.p>
 
       {/* Links header */}
